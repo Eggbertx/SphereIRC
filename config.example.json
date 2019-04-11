@@ -1,0 +1,11 @@
+{
+	"nick": "SphereBot",
+	"username": "spherebot",
+	"password": "12345",
+	"realName": "SphereBot Redux",
+	"log": true,
+	"servers": [{
+		"hostname": "irc.freenode.org",
+		"channels": ["#spherebot"]
+	}]
+}
