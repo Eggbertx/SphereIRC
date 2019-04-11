@@ -1,8 +1,3 @@
-/*
- * SphereBot
- * (c) 2019 Eggbertx
- */
-
 import { Thread,Console } from 'sphere-runtime';
 import { IRCClient } from 'irc';
 
@@ -45,18 +40,16 @@ export default class Main extends Thread {
 	}
 
 	on_render() {
-		let y = 0;
-		font.drawText(screen, 0, y, "SphereBot info");
-		y += font.height;
-		font.drawText(screen, 0, y, "Servers:");
-		y += font.height;
+		let lines = ["SphereIRC Connections:",""];
+
 		for(let server of this.client.servers) {
-			font.drawText(screen, 0, y, `\tHostname: ${server.hostname}`);
-			y += font.height;
-			font.drawText(screen, 0, y, `\tPort: ${server.port}`);
-			y += font.height;
-			font.drawText(screen, 0, y, `\tChannels: ${server.joinedChannels}`);
-			y += font.height*2;
+			lines.push(
+				`Server: ${server.hostname}:${server.port?server.port:6667}`,
+				`Channels: ${server.joinedChannels}`, ""
+			);
+		}
+		for(let l in lines) {
+			font.drawText(screen, 0, 4+l*font.height, lines[l]);
 		}
 	}
 }

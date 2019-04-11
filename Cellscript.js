@@ -5,7 +5,7 @@ Object.assign(Sphere.Game, {
 	author: "Eggbertx",
 	saveID: "eggbertx.SphereIRC",
 	summary: "An IRC client (and maybe eventually server) module for miniSphere",
-	resolution: '640x480',
+	resolution: '800x600',
 	main: '@/scripts/main.js',
 });
 
